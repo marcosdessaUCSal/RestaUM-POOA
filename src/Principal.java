@@ -7,26 +7,15 @@ import view.View;
 
 public class Principal {
 	
-	private static Controller controller;
-	
 	private static View view;
 
 	public static void main(String[] args) {
-		
-		controller = new Controller();
-		
-//		view = new ConsoleView(controller);
-		new GUIstart(controller);
-		
 		EventQueue.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				GUIstart gui = new GUIstart(controller);
+				GUIstart gui = new GUIstart();
 				gui.setVisible(true);
 			}
 		});
-		
-
 	}
-
 }

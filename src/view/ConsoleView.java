@@ -13,8 +13,8 @@ public class ConsoleView implements View {
 	private int[] vMov; // vetor com as coordenadas das pedras, antes e depois
 
 	// CONSTRUTOR
-	public ConsoleView(Controller controller) {
-		this.controller = controller;
+	public ConsoleView() {
+		this.controller = new Controller();
 		this.vMov = new int[4];
 		teclado = new Scanner(System.in);
 

@@ -14,17 +14,14 @@ import javax.swing.JPanel;
 import controller.Controller;
 
 public class GUIstart extends JFrame {
-	
 	private TabuleiroGUI jogo;
 	private BorderLayout layout;
 	private JPanel painelBotoes;
 	private JButton btnIniciar;
 	private Controller controller;
 	
-	
-	public GUIstart(Controller controller) {
-//		Controller controller = new Controller();
-		this.controller = controller;
+	public GUIstart() {
+		Controller controller = new Controller();
 		jogo = new TabuleiroGUI(controller);
 		layout = new BorderLayout();
 		painelBotoes = new JPanel();
@@ -35,7 +32,6 @@ public class GUIstart extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "Autor: Marcos Dessa");
-				
 			}
 		});
 		
@@ -51,17 +47,4 @@ public class GUIstart extends JFrame {
 		this.setLocationRelativeTo(null);
 		this.setSize(528, 756);
 	}
-
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			@Override
-//			public void run() {
-//				GUIstart gui = new GUIstart();
-//				gui.setVisible(true);
-//			}
-//		});
-		
-//	}
-	
-
 }
