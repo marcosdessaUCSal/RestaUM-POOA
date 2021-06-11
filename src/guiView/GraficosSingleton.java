@@ -20,6 +20,7 @@ public class GraficosSingleton {
 	private Image fig00;
 	private Image fig01;
 	private Image fig02;
+	private Image fig021;
 	private Image fig03;
 	private Image fig10;
 	private Image fig11;
@@ -45,6 +46,7 @@ public class GraficosSingleton {
 		fig00 = new ImageIcon(getClass().getResource("assets/fig00.png")).getImage();
 		fig01 = new ImageIcon(getClass().getResource("assets/fig01.png")).getImage();
 		fig02 = new ImageIcon(getClass().getResource("assets/fig02.png")).getImage();
+		fig021 = new ImageIcon(getClass().getResource("assets/fig02-1.png")).getImage();
 		fig03 = new ImageIcon(getClass().getResource("assets/fig03.png")).getImage();
 		fig10 = new ImageIcon(getClass().getResource("assets/fig10.png")).getImage();
 		fig11 = new ImageIcon(getClass().getResource("assets/fig11.png")).getImage();
@@ -67,6 +69,7 @@ public class GraficosSingleton {
 		mapa.put(0, fig00);
 		mapa.put(1, fig01);
 		mapa.put(2, fig02);
+		mapa.put(201, fig021);
 		mapa.put(3, fig03);
 		mapa.put(10, fig10);
 		mapa.put(11, fig11);

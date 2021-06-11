@@ -7,8 +7,6 @@ import view.View;
 
 public class Principal {
 	
-	private static View view;
-
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			@Override

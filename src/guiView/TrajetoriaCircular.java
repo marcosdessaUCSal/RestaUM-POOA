@@ -16,16 +16,6 @@ public class TrajetoriaCircular {
 	private double r;
 	private double t, t0;
 	
-//	public TrajetoriaCircular(double xc, double yc, double omega, double r,
-//			double t, double t0) {
-//		this.xc = xc;
-//		this.yc = yc;
-//		this.omega = omega;
-//		this.r = r;
-//		this.t = t;
-//		this.t0 = t0;
-//	}
-	
 	public void setParams(double xc, double yc, double omega, double r,
 			double t, double t0) {
 		this.xc = xc;

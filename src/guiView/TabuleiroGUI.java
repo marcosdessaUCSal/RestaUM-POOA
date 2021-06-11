@@ -42,6 +42,13 @@ public class TabuleiroGUI extends JPanel {
 	private long tempoInicial, tempoAgora;
 	private int contador;
 	private boolean acionaContador;
+	
+	// dados do contador que gira
+	private double xc, yc;
+	private double omega;
+	private double r;
+	private int x, y, xo, yo;
+	
 
 	// CONSTRUTOR
 	public TabuleiroGUI(Controller controller) {
@@ -68,6 +75,10 @@ public class TabuleiroGUI extends JPanel {
 		this.acionaContador = false;
 		monitor = new Monitor();
 		timer.scheduleAtFixedRate(monitor, ATRASO, PERIODO);
+		
+		this.xc = 236; this.yc = 232;
+		this.omega = 0.0008;
+		this.r = 240;
 	}
 
 	@Override
@@ -91,19 +102,14 @@ public class TabuleiroGUI extends JPanel {
 		desenharEliminadas(g);
 		desenhaTrajetoria(g);
 		g.setFont(new Font("Serif", Font.BOLD, 22));
-//		g.drawString("Contagem: " + monitor.getTempo(), 20, 20);
 		g.drawString("Contagem: " + this.contador, 20, 20);
 		Toolkit.getDefaultToolkit().sync();
 
 	}
 	
 	private void desenhaTrajetoria(Graphics g) {
-		double xc = 236, yc = 232;
-		double omega = 0.001;
-		double r = 240;
-		double t = System.currentTimeMillis();
-		int x = (int) trajetCirc.getX(t);
-		int y = (int) trajetCirc.getY(t);
+		x = (int) trajetCirc.getX(System.currentTimeMillis());
+		y = (int) trajetCirc.getY(System.currentTimeMillis());
 		if (x > 200 && x < 280 && y > 300) {
 			guiMatrizModel.setElemento(10, 5, 62);
 			acionaContador = true;
@@ -114,8 +120,13 @@ public class TabuleiroGUI extends JPanel {
 			}
 			guiMatrizModel.setElemento(10, 5, 61);
 		}
-		trajetCirc.setParams(xc, yc, omega, r, t, tempoInicial);
+		trajetCirc.setParams(xc, yc, omega, r, System.currentTimeMillis(), tempoInicial);
 		g.drawImage(this.imagens.getImageIcon(2), x, y, this);
+		trajetCirc.setParams(x, y, omega * 8, 48, System.currentTimeMillis(), tempoInicial);
+		xo = (int) trajetCirc.getX(System.currentTimeMillis());
+		yo = (int) trajetCirc.getY(System.currentTimeMillis());
+		g.drawImage(this.imagens.getImageIcon(201), xo, yo, this);
+		trajetCirc.setParams(xc, yc, omega, r, System.currentTimeMillis(), tempoInicial);
 	}
 	
 	private void desenharEliminadas(Graphics g) {
@@ -148,7 +159,6 @@ public class TabuleiroGUI extends JPanel {
 			if (linha == 10 && coluna == 5) {
 				controller.iniciarTab();
 				sincronizarMatrizes();
-//				tempoInicial = System.currentTimeMillis();
 				contador = 0;
 				repaint();
 				return;

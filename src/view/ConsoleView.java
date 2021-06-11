@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import controller.Controller;
 
-public class ConsoleView implements View {
+public class ConsoleView {
 
 	private Scanner teclado;
 	private Controller controller;
