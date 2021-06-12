@@ -4,7 +4,7 @@
 
 - Atividade avaliativa para obtenção de nota na Unidade 2 no Curso Programação Orientada a Objetos Avançada, com o Prof. Mario Jorge Pereira
 
-## Versão 1.2
+## Versão 1.3
 
 - Projeto feito com arquitetura MVC usando JDK-11
 - Utiliza padrão singleton

@@ -122,7 +122,11 @@ public class TabuleiroGUI extends JPanel {
 		}
 		trajetCirc.setParams(xc, yc, omega, r, System.currentTimeMillis(), tempoInicial);
 		g.drawImage(this.imagens.getImageIcon(2), x, y, this);
-		trajetCirc.setParams(x, y, omega * 8, 48, System.currentTimeMillis(), tempoInicial);
+		trajetCirc.setParams(x, y, omega * 4, 56, System.currentTimeMillis(), tempoInicial);
+		xo = (int) trajetCirc.getX(System.currentTimeMillis());
+		yo = (int) trajetCirc.getY(System.currentTimeMillis());
+		g.drawImage(this.imagens.getImageIcon(201), xo, yo, this);
+		trajetCirc.setParams(x, y, -omega * 10, 24, System.currentTimeMillis(), tempoInicial);
 		xo = (int) trajetCirc.getX(System.currentTimeMillis());
 		yo = (int) trajetCirc.getY(System.currentTimeMillis());
 		g.drawImage(this.imagens.getImageIcon(201), xo, yo, this);
